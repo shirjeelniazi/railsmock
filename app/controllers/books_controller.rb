@@ -40,6 +40,9 @@ class BooksController < ApplicationController
     if params[:tag2tag3prg0]
       @books = Book.joins(:tag).where([ 'tags.tag2 = true AND  tags.tag3 = true AND books.price >=  0'])             # list books with tag2 and tag3 checked and price >= 0
     end
+    if params[:tag1tag2prg0]
+      @books = Book.joins(:tag).where([ 'tags.tag1 = true AND  tags.tag2 = true AND books.price >=  0'])             # list books with tag2 and tag3 checked and price >= 0
+    end
     
     
     # render json: @books

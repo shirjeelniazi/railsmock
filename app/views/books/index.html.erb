@@ -2,7 +2,8 @@
 
 <h1>Books</h1>
 
-<%= button_to "List All Books", books_path %> 
+<li>
+<%= link_to "Home", root_path %>
 
 <div id="books">
   <% @books.each do |book| %>
