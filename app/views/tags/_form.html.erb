@@ -1,0 +1,37 @@
+<%= form_with(model: tag) do |form| %>
+  <% if tag.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+        <% tag.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :book_id, style: "display: block" %>
+    <%= form.number_field :book_id %>
+  </div>
+
+  <div>
+    <%= form.label :tag1, style: "display: block" %>
+    <%= form.check_box :tag1 %>
+  </div>
+
+  <div>
+    <%= form.label :tag2, style: "display: block" %>
+    <%= form.check_box :tag2 %>
+  </div>
+
+  <div>
+    <%= form.label :tag3, style: "display: block" %>
+    <%= form.check_box :tag3 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
