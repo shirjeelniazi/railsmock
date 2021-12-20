@@ -13,7 +13,11 @@
 
   <div>
     <%= form.label :book_id, style: "display: block" %>
-    <%= form.number_field :book_id %>
+   
+         
+   
+    <%= form.collection_select :book_id, Book.order(:id),:id,:title, include_blank: true %>
+
   </div>
 
   <div>
